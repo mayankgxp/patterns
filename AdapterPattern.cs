@@ -1,30 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace patterns;
 
-namespace patterns
+public interface IClientRequest
 {
-    public interface IClientRequest
-    {
-        public void ProcessRequst();
-    }
+    public void ProcessRequst();
+}
 
-    public class LegacySystem
+public class LegacySystem
+{
+    public void LegacyMethod()
     {
-        public void LegacyMethod()
-        {
-            Console.WriteLine("Legacy Method.");
-        }
+        Console.WriteLine("Legacy Method.");
     }
+}
 
-    public class RequestAdapter: IClientRequest
+public class RequestAdapter: IClientRequest
+{
+    LegacySystem ls = new();
+    public void ProcessRequst()
     {
-        LegacySystem ls = new();
-        public void ProcessRequst()
-        {
-            ls.LegacyMethod();
-        }
+        ls.LegacyMethod();
     }
 }

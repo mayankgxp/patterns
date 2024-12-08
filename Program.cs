@@ -7,8 +7,8 @@ Console.WriteLine(result);
 var car = new CarBuilder().SetName("Baleno").SetEngine("TFV").BuildCar();
 Console.WriteLine(car);
 
-var lsa = new RequestAdapter();
-lsa.ProcessRequst();
+IClientRequest clientRequest = new RequestAdapter();
+clientRequest.ProcessRequst();
 
 
 IComponent component = new ConcreteComponent();
