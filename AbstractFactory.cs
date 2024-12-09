@@ -25,12 +25,6 @@ namespace patterns
         public void Create() => Console.WriteLine("Plastic Chair Created.");
     }
 
-    // Abstract Product - Table
-    public interface ITable
-    {
-        void Create();
-    }
-
     // Abstract Factory
     public interface IFurnitureFactory
     {
